@@ -1,0 +1,50 @@
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "vendor/reset";
+@import "aos/dist/aos";
+@import "owl.carousel2/dist/assets/owl.carousel.min";
+@import "owl.carousel2/dist/assets/owl.theme.default.min";
+
+
+html {
+    height: 100%;
+    font-size: 62.5%;
+}
+
+body {
+    height: 100%;
+    color: $black;
+    overflow-x: hidden;
+    background-color: $white;
+
+    font-family: "Neris";
+    font-size: 2rem;
+
+    ::selection {
+        background: $skyblue; /* Safari */
+    }
+    ::-moz-selection {
+        background: $skyblue; /* Firefox */
+    }
+}
+
+input {
+    font-family: "Neris";
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+/* Blocks */
+@import "blocks/page";
+@import "blocks/header";
+@import "blocks/footer";
+@import "blocks/nav-column";
+
+/* Pages */
+@import "blocks/index";
+// @import "blocks/product";

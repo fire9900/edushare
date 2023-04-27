@@ -1,0 +1,33 @@
+.page {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	overflow: hidden;
+}
+
+.content {
+	margin-left: 24.5rem;
+	margin-right: 10rem;
+	margin-top: $header-height + 5rem;
+
+	flex: 1 0 auto;
+	line-height: 3.5rem;
+	font-size: 3rem;
+}
+
+a:focus, button:focus {
+	outline: none;
+}
+
+a:focus-visible, button:focus-visible {
+	outline-offset: 3px;
+	outline: 2px $black solid;
+}
+
+.anchor {
+	position: absolute;
+
+	&#courses_anchor {
+		top: -10rem;
+	}
+}
