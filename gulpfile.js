@@ -24,7 +24,7 @@ const spawn = require('child_process').spawn;
 /* Paths */
 const srcPath = 'assets/';
 const distPath = 'edushare/edushare/static/bundles/';
-const htmlPath = 'edushare/eduapp/templates/eduapp/'
+const htmlPath = 'edushare/**/templates/**/'
 
 const path = {
     build: {
@@ -39,7 +39,8 @@ const path = {
         js:     srcPath + "js/*.js",
         css:    srcPath + "scss/*.scss",
         images: srcPath + "images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
-        fonts:  srcPath + "fonts/**/*.{otf,eot,woff,woff2,ttf,svg}"
+        fonts:  [srcPath + "fonts/**/*.{otf,eot,woff,woff2,ttf,svg}",
+                "node_modules/@fortawesome/fontawesome-free/webfonts/*.{otf,eot,woff,woff2,ttf}"]
     },
     watch: {
         html:   htmlPath + "**/*.html",
@@ -221,12 +222,12 @@ function images(cb) {
             imagemin.gifsicle({interlaced: true}),
             imagemin.mozjpeg({quality: 95, progressive: true}),
             imagemin.optipng({optimizationLevel: 5}),
-            // imagemin.svgo({
-            //     plugins: [
-            //         { removeViewBox: true },
-            //         { cleanupIDs: false }
-            //     ]
-            // })
+            imagemin.svgo({
+                plugins: [
+                    { removeViewBox: true },
+                    { cleanupIDs: false }
+                ]
+            })
         ]))
         .pipe(dest(path.build.images))
         .pipe(browserSync.reload({stream: true}));

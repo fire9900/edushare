@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-cs+66v%rlyrkv*t7-($s%txq_xl^6$y)4##4v#b33%ft@$$_a1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
+DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
@@ -40,8 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # vendoe apps
     'colorfield',
+    'optimized_image',
     # my apps
-    'eduapp.apps.EduappConfig',
+    'eduapp',
+    'courses',
+    'django_cleanup.apps.CleanupConfig',
 ]
 
 MIDDLEWARE = [
@@ -143,3 +146,8 @@ STATICFILES_FINDERS = (
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# OPTIMIZED_IMAGE_METHOD = 'pillow'
+OPTIMIZED_IMAGE_METHOD = 'tinypng'
+TINYPNG_KEY = 'H9xdMq3wjtzfZC4HhgnK5wtrY4x8zMvz'
+

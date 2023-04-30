@@ -5,9 +5,13 @@ from .models import GridSubject, Teacher
 
 def index(request):
     return render(request, 'eduapp/index.html',
-                  {'title': 'main',
-                   'grid_subjects': GridSubject.objects.all(),
-                   'teachers': Teacher.objects.all()})
+                  {'title': 'Главная',
+                   'grid_subjects': GridSubject.objects.filter(on_index=True),
+                   'teachers': Teacher.objects.filter(on_index=True)})
+
+
+def work_in_progress(request):
+    return render(request, 'eduapp/wip.html', {'title':'Работа в процессе'})
 
 
 def handle_not_found(request):

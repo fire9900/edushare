@@ -180,17 +180,72 @@
 }
 
 .section--teachers {
+	margin-left: 10rem;
 	height: 60rem;
-	filter: drop-shadow(3px 3px 2px $gray);
+	// filter: drop-shadow(3px 3px 2px $gray); //lagging
 
 	.carousel-wrapper {
+		transform: translate3d(0px, 0px, 0px);
 		-webkit-transform: translate3d(0, 0, 0);
-	}
 
-	.owl-carousel {
-		position: absolute;
-		width: 100%;
-		height: 55rem;
+		.teachers-carousel {
+			position: absolute;
+			width: 100%;
+			height: 55rem;
+
+			.owl-stage-outer {
+				margin: -5px;
+				padding: 5px;
+			}
+		}
+
+		.owl-nav {
+			width: 100%;
+			display: flex;
+		    justify-content: space-between;
+
+			margin: 0 !important;
+			padding: 0 2%;
+		    position: absolute;
+		    top: 50%;
+		    transform: translateY(-50%);
+		    pointer-events: none;
+
+		    [class*="owl-"] {
+		    	pointer-events: all;
+		    	font-size: 3rem;
+		    	height: 10rem;
+		    	width: 5rem;
+		    	display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: rgba($darkblue, .7);
+
+				&:hover {
+					background-color: rgba($darkblue, .9);
+				}
+		    }
+		}
+
+		.owl-dots {
+	    	position: absolute;
+
+	    	left: 0;
+	    	right: 0;
+	    	bottom: -3.5rem;
+
+	    	.owl-dot span {
+	    		width: 4rem;
+	    		height: 0.5rem;
+	    		border-radius: 0;
+
+	    		background: #777;
+	    	}
+
+	    	.owl-dot.active span {
+	    		background: $darkblue;
+	    	}
+	    }
 	}
 
 	.section--teachers__elem {
@@ -198,11 +253,7 @@
 		width: 41.5rem;
 		height: 55rem;
 		border: 2px solid rgba($darkblue, .4);
-
-		// display: flex;
-		// flex-direction: column;
-		// justify-content: space-between;
-		// align-items: center;
+		box-shadow: 3px 3px 2px $gray;
 
 		&__img {
 			height: 70%;
@@ -220,6 +271,7 @@
 		&__name {
 			font-weight: bold;
 			margin-bottom: 2rem;
+			text-shadow: 2px 2px 2px $gray;
 		}
 
 		&__desc {

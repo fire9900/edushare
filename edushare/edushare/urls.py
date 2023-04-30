@@ -23,6 +23,7 @@ from eduapp.views import index
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('eduapp.urls')),
+    path('', include('courses.urls')),
     # path('', index, name='home'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

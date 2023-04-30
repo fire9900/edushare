@@ -5,4 +5,3 @@ class EduappConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'eduapp'
     verbose_name = 'CORE'
-    # models_module = 'models.py'

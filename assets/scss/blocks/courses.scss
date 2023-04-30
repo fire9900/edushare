@@ -1,0 +1,100 @@
+.course {
+	display: flex;
+	flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+
+	position: relative;
+	width: 70%;
+	height: 20rem;
+
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 2rem;
+
+	border: 3px solid $darkblue;
+	box-shadow: 2px 2px 0px $darkblue;
+
+	transition: box-shadow 0.2s;
+
+	text-decoration: none;
+	color: $darkblue;
+
+	&:hover {
+		box-shadow: 5px 5px 0px $darkblue;
+	}
+
+	&:has(.carousel-wrapper) &__info {
+		width: calc(100% - 13.3rem);
+	}
+
+	&__info {
+		width: 100%;
+		height: 100%;
+
+		&__title {
+			width: 100%;
+			padding: 2rem 1rem 0 1rem;
+			font-weight: 800;
+			border-bottom: 2px solid $darkblue;
+		}
+
+		&__description {
+			width: 100%;
+			padding: 1rem;
+			font-size: 2rem;
+			line-height: 100%;
+			overflow: hidden;
+		}
+
+		&__tags {
+			position: absolute;
+			top: -3rem;
+			left: 1rem;
+			font-size: 2.2rem;
+			display: flex;
+			gap: 2rem;
+
+			&__border {
+				padding: 0.3rem;
+			}
+
+			&__tag {
+				background: $white;
+
+				&__text {
+					padding: 0.2rem;
+					background-clip: text;
+					-webkit-background-clip: text;
+					color: transparent;
+				}
+
+			}
+		}
+	}
+
+	.carousel-wrapper {
+		pointer-events: none;
+		user-select: none;
+		height: 100%;
+		transform: translate3d(0px, 0px, 0px);
+		-webkit-transform: translate3d(0, 0, 0);
+		overflow: hidden;
+		
+		.teacher-photo-carousel {
+			pointer-events: none;
+			user-select: none;
+			height: 100%;
+			width: 13.3rem;
+
+			border-left: 2px solid $darkblue;
+
+			.course__teacher-photo {
+				width: 100%;
+				height: 20rem;
+				object-fit: cover;
+			}
+		}
+	}
+}

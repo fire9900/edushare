@@ -6,8 +6,14 @@
 		<img src="{% static 'bundles/images/wave1.png' %}" alt="" id="wave1">
 		<img src="{% static 'bundles/images/wave2.png' %}" alt="" id="wave2">
 	</div>
+	<div class="navbar-toggler">
+		<button class="navbar-toggler__btn">
+			<i class="fa-sharp fa-solid fa-bars"></i>
+			<p class="navbar-toggler__text">Меню</p>
+		</button>
+	</div>
 	<div class="header__logo">
-		<a href="/">
+		<a href="{% url 'index' %}">
 			<img src="{% static 'bundles/images/logo.svg' %}" alt="Logo">
 		</a>
 	</div>
@@ -17,12 +23,12 @@
 	</div>
 	<div class="header__personal-bar">
 		<!-- <div class="personal-bar__dashboard"></div> -->
-		<div class="personal-btn btn_sign-in">
+		<button class="personal-btn btn_sign-in">
 			<p class="personal-text">Войти</p>
-		</div>
-		<div class="personal-btn btn_registration">
+		</button>
+		<button class="personal-btn btn_registration">
 			<p class="personal-text">Регистрация</p>
-		</div>
+		</button>
 		<a href="http://digitalwind.ru" class="digital_wind-logo"><img id="bxid_862078" src="http://www.digitalwind.ru/images/logo2023.jpg" title="www.digitalwind.ru" border="0" align="left" alt="www.digitalwind.ru"></a>
 		
 	</div>
@@ -31,47 +37,47 @@
 <aside class="nav-column">
 	<div class="shadow-fix"></div>
 	<div class="shelf-container">
-		<a class="shelf" href="#courses_anchor" id="courses">
+		<a class="shelf" href="{% url 'index' %}#courses_anchor" id="courses">
 			<p class="shelf-text">Курсы</p>
 			<img src="{% static 'bundles/images/books/books1.svg' %}" alt="" class="books" id="books1">
 		</a>
-		<a class="shelf" href="/" id="news">
+		<a class="shelf" href="{% url 'wip' %}" id="news">
 			<p class="shelf-text">Новости</p>
 		</a>
-		<a class="shelf" href="/" id="about">
+		<a class="shelf" href="{% url 'wip' %}" id="about">
 			<p class="shelf-text">О нас</p>
 			<img src="{% static 'bundles/images/books/books2.svg' %}" alt="" class="books" id="books2">
 		</a>
-		<a class="shelf" href="/" id="adv_search">
+		<a class="shelf" href="{% url 'courses' %}" id="adv_search">
 			<p class="shelf-text">Расширенный поиск</p>
 			<img src="{% static 'bundles/images/books/books3.svg' %}" alt="" class="books" id="books3">
 		</a>
-		<a class="shelf" href="/" id="lesson_code">
+		<a class="shelf" href="{% url 'wip' %}" id="lesson_code">
 			<p class="shelf-text">Код урока</p>
 		</a>
-		<a class="shelf" href="#teachers_anchor" id="teachers">
+		<a class="shelf" href="{% url 'index' %}#teachers_anchor" id="teachers">
 			<p class="shelf-text">Учителя</p>
 			<img src="{% static 'bundles/images/books/books4.svg' %}" alt="" class="books" id="books4">
 		</a>
 	</div>
 	<div class="actual-name"><p>АКТУАЛЬНОЕ</p></div>
 	<div class="actual-container">
-		<a class="actual-div" href="/">
+		<a class="actual-div" href="{% url 'wip' %}">
 			<img src="{% static 'bundles/images/actual-dots.svg' %}" alt="" class="actual-dots">
 			<p class="actual-text">Подготовка к ЕГЭ!</p>
 			<div class="actual-bookmark" style="background-color: #e74c3c;"></div>
 		</a>
-		<a class="actual-div" href="/">
+		<a class="actual-div" href="{% url 'wip' %}">
 			<img src="{% static 'bundles/images/actual-dots.svg' %}" alt="" class="actual-dots">
 			<p class="actual-text">Создавайте уроки!</p>
 			<div class="actual-bookmark" style="background-color: #3498db;"></div>
 		</a>
-		<a class="actual-div" href="/">
+		<a class="actual-div" href="{% url 'wip' %}">
 			<img src="{% static 'bundles/images/actual-dots.svg' %}" alt="" class="actual-dots">
 			<p class="actual-text">Подготовка к олимпиадам</p>
 			<div class="actual-bookmark" style="background-color: #f1c40f;"></div>
 		</a>
-		<a class="actual-div" href="/">
+		<a class="actual-div" href="{% url 'wip' %}">
 			<img src="{% static 'bundles/images/actual-dots.svg' %}" alt="" class="actual-dots">
 			<p class="actual-text">Текущие конкурсы</p>
 			<div class="actual-bookmark" style="background-color: #9b59b6;"></div>

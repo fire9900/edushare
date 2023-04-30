@@ -4,11 +4,11 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>{{ title }}</title>
+    <title>EduShare - {{ title }}</title>
     <link rel="stylesheet" href="{% static 'bundles/css/style.min.css' %}">
 </head>
 <body>    
-    <div class="page">
+    <div class="page" navbar-toggler_visible="false">
         {% include "eduapp/header.html" %}
         <div class="content">
             {% block content %}

@@ -1,0 +1,20 @@
+{%  extends 'eduapp/base.html' %}
+
+{% block content %}
+	<div class="course-landing">
+		<div class="course-landing__info">
+			<p class="course-landing__info__name">{{course.title}}</p>
+			<p class="course-landing__info__tags">{% for tag in course.tags.all %}<span>#{{tag.title}}</span>{% endfor %}</p>
+		</div>
+		<div class="course-landing__description">
+			<div class="course-landing__description__title">Описание</div>
+			<div class="course-landing__description__text">{{ course.description }}</div>
+		</div>
+		<div class="course-landing__lessons">
+			Глава 1.
+		</div>
+		<div class="course-landing__teachers">
+			
+		</div>
+	</div>
+{% endblock %}

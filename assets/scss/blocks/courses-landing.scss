@@ -1,0 +1,44 @@
+.course-landing {
+	width: 100%;
+	color: $darkblue;
+
+	&__info {
+		width: 100%;
+		background-color: $blue;
+		padding: 3rem;
+
+		&__name {
+			font-size: 4.5rem;
+			font-weight: 800;
+			margin-bottom: 3rem;
+		}
+
+		&__tags {
+			display: flex;
+			flex-direction: row;
+		    justify-content: flex-start;
+		    align-items: flex-start;
+		    flex-wrap: wrap;
+		    gap: 3rem 2rem;
+		}
+	}
+
+	&__description {
+		width: 100%;
+		padding: calc(3rem - 3px);
+		border: 3px solid $blue;
+		margin-bottom: 4rem;
+
+		&__title {
+			font-weight: 800;
+			margin-bottom: 1rem;
+		}
+	}
+
+	&__lessons {
+		width: 100%;
+		padding: calc(3rem - 3px);
+		border: 3px solid $blue;
+		font-weight: 700;
+	}
+}

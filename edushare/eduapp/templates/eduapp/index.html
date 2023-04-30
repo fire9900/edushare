@@ -93,12 +93,12 @@
 <div class="section section--teachers">
 	<div class="anchor" id="teachers_anchor"></div>
 	<div class="carousel-wrapper">
-		<div class="owl-carousel owl-theme">
+		<div class="teachers-carousel owl-carousel owl-theme">
 			{% for teacher in teachers %}
 				<div class="section--teachers__elem">
 					<img src="{{ teacher.photo.url }}" alt="" class="section--teachers__elem__img">
 					<div class="section--teachers__elem__text-div">
-						<p class="section--teachers__elem__name">{{ teacher.name }}</p>
+						<p class="section--teachers__elem__name">{{ teacher.title }}</p>
 						<p class="section--teachers__elem__desc">{{ teacher.description }}</p>
 					</div>
 				</div>

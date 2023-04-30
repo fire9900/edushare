@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='gridsubject',
             name='bg_image',
-            field=models.FileField(storage=eduapp.storage.OverwriteStorage(), upload_to='images', validators=[eduapp.models.validate_svg], verbose_name='Фоновое изображение'),
+            field=models.FileField(storage=eduapp.storage.OverwriteStorage(), upload_to='images', verbose_name='Фоновое изображение'),
         ),
         migrations.AlterField(
             model_name='subject',

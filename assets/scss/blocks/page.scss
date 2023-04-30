@@ -7,12 +7,16 @@
 
 .content {
 	margin-left: 24.5rem;
-	margin-right: 10rem;
+	margin-right: 24.5rem;
 	margin-top: $header-height + 5rem;
 
 	flex: 1 0 auto;
 	line-height: 3.5rem;
 	font-size: 3rem;
+
+	&[on_index="true"] {
+		margin-right: 10rem;
+	}
 }
 
 a:focus, button:focus {

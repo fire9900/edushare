@@ -5,11 +5,14 @@
 @import "aos/dist/aos";
 @import "owl.carousel2/dist/assets/owl.carousel.min";
 @import "owl.carousel2/dist/assets/owl.theme.default.min";
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
+@import "@fortawesome/fontawesome-free/scss/solid";
 
 
 html {
     height: 100%;
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -33,6 +36,14 @@ input {
     font-family: "Neris";
 }
 
+button {
+    outline: none;
+    text-decoration: none;
+    border: none;
+    padding: 0;
+    background: transparent;
+}
+
 *,
 *:before,
 *:after {
@@ -47,4 +58,6 @@ input {
 
 /* Pages */
 @import "blocks/index";
-// @import "blocks/product";
+@import "blocks/wip";
+@import "blocks/courses";
+@import "blocks/courses-landing";

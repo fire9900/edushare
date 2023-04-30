@@ -1,8 +1,14 @@
+.page[navbar-toggler_visible="false"] .nav-column {
+		transform: translateX(-22.5rem);
+}
+
 .nav-column {
 	position: fixed;
 	width: 22.5rem;
 	height: calc(100% - $header-height);
 	top: 7.5rem;
+	transition: transform .2s ease-out;
+	z-index: 5;
 
 	font-family: "PT_Sans";
 	background-color: #E7D3B0;
