@@ -1,9 +1,0 @@
-*.log
-*.pot
-*.pyc
-__pycache__
-db.sqlite3
-media
-venv
-.idea
-node_modules/

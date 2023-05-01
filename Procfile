@@ -1,1 +1,0 @@
-web: gunicorn edushare.wsgi --log-file
