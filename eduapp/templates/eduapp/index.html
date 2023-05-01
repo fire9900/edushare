@@ -62,7 +62,7 @@
 	<img src="{% static 'bundles/images/schoolboard.svg' %}" alt="" class="bg-img" id="schoolboard">
 	<div class="bg-img edushare-div">
 		<p class="edushare-div__text" id="upper">Онлайн школа</p>
-		<p class="edushare-div__text" id="name">Edushare</p>
+		<p class="edushare-div__text" id="name">EduShare</p>
 		<p class="edushare-div__text" id="slogan">– поделись знаниями!</p>
 	</div>
 </div>
@@ -80,7 +80,7 @@
 	<p class="section--courses__text">Курсы</p>
 	<div class="section--courses__grid">
 		{% for subject in grid_subjects %}
-			<a href="">
+			<a href="{% url 'courses' %}?tags={{subject.subject.subject_name}}">
 				<div class="grid__elem" style="background-image: url({{ subject.bg_image.url }})">
 					<div class="grid__elem__text-div" style="background-color: {{ subject.bg_text_color }}">
 						<p class="grid__elem__text">{{ subject.subject.subject_name }}</p>
