@@ -1,32 +1,38 @@
 {%  extends 'eduapp/base.html' %}
 
 {% block content %}
-	{% for course in courses %}
-		<a href="{{ course.get_absolute_url }}" class="course">
-			<div class="course__info">
-				<div class="course__info__tags">
-					{% for tag in course.tags.all %}
-						<div class="course__info__tags__border" style="background-image: linear-gradient(to top, transparent,rgba(255, 255, 255, .3) 100%),
-									linear-gradient({{tag.color}}, {{tag.color}});">
-							<div class="course__info__tags__tag">
-								<p class="course__info__tags__tag__text" style="background-image: linear-gradient(to top, transparent,rgba(255, 255, 255, .3) 100%),
-									linear-gradient({{tag.color}}, {{tag.color}});">{{ tag.title }}</p>
+	{% if courses %}
+		{% for course in courses %}
+			<a href="{{ course.get_absolute_url }}" class="course">
+				<div class="course__info">
+					<div class="course__info__tags">
+						{% for tag in course.tags.all %}
+							<div class="course__info__tags__border" style="background-image: linear-gradient(to top, transparent,rgba(255, 255, 255, .3) 100%),
+										linear-gradient({{tag.color}}, {{tag.color}});">
+								<div class="course__info__tags__tag">
+									<p class="course__info__tags__tag__text" style="background-image: linear-gradient(to top, transparent,rgba(255, 255, 255, .3) 100%),
+										linear-gradient({{tag.color}}, {{tag.color}});">{{ tag.title }}</p>
+								</div>
 							</div>
-						</div>
-					{% endfor %}
-				</div>
-				<p class="course__info__title">{{ course.title }}</p>
-				<p class="course__info__description">{{ course.description }}</p>
-			</div>
-			{% if course.teacher_photo_visible %}
-				<div class="carousel-wrapper">
-					<div class="teacher-photo-carousel owl-carousel owl-theme">
-						{% for teacher in course.related_teachers.all %}
-							<img src="{{ teacher.photo.url }}" alt="" class="course__teacher-photo"></img>
 						{% endfor %}
 					</div>
+					<p class="course__info__title">{{ course.title }}</p>
+					<p class="course__info__description">{{ course.description }}</p>
 				</div>
-			{% endif %}
-		</a>
-	{% endfor %}
+				{% if course.teacher_photo_visible %}
+					<div class="carousel-wrapper">
+						<div class="teacher-photo-carousel owl-carousel owl-theme">
+							{% for teacher in course.related_teachers.all %}
+								<img src="{{ teacher.photo.url }}" alt="" class="course__teacher-photo"></img>
+							{% endfor %}
+						</div>
+					</div>
+				{% endif %}
+			</a>
+		{% endfor %}
+	{% else %}
+		<div class="noresponse">
+			
+		</div>
+	{% endif %}
 {% endblock %}

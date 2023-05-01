@@ -44,7 +44,9 @@ INSTALLED_APPS = [
     # my apps
     'eduapp',
     'courses',
+    # end my apps
     'django_cleanup.apps.CleanupConfig',
+    'mptt',
 ]
 
 MIDDLEWARE = [

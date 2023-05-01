@@ -1,17 +1,29 @@
 {%  extends 'eduapp/base.html' %}
+{% load mptt_tags %}
 
 {% block content %}
 	<div class="course-landing">
 		<div class="course-landing__info">
 			<p class="course-landing__info__name">{{course.title}}</p>
-			<p class="course-landing__info__tags">{% for tag in course.tags.all %}<span>#{{tag.title}}</span>{% endfor %}</p>
+			<p class="course-landing__info__tags">{% for tag in course.tags.all %}<a href="{% url 'courses' %}?tags={{tag.title}}">#{{tag.title}}</a >{% endfor %}</p>
 		</div>
 		<div class="course-landing__description">
 			<div class="course-landing__description__title">Описание</div>
 			<div class="course-landing__description__text">{{ course.description }}</div>
 		</div>
 		<div class="course-landing__lessons">
-			Глава 1.
+			<ol>
+				{% recursetree lesson_list %}
+					<li>
+						{{ node.title }}
+			            {% if not node.is_leaf_node %}
+			                <ol class="children">
+			                    {{ children }}
+			                </ol>
+			            {% endif %}
+					</li>
+				{% endrecursetree %}
+			</ol>
 		</div>
 		<div class="course-landing__teachers">
 			

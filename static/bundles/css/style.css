@@ -11277,7 +11277,7 @@ footer > * {
     height: 20rem;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 2rem;
+    margin-bottom: 7rem;
     border: 3px solid #2C3E50;
     box-shadow: 2px 2px 0px #2C3E50;
     transition: box-shadow 0.2s;
@@ -11368,9 +11368,32 @@ footer > * {
     object-fit: cover;
 }
 
+.course .carousel-wrapper .owl-dots {
+    width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    bottom: 0;
+    margin: 0 !important;
+    opacity: 0.9;
+}
+
+.course .carousel-wrapper .owl-dots .owl-dot span {
+    background: rgba(44, 62, 80, 0.7);
+    border: 2px solid #2C3E50;
+}
+
+.course .carousel-wrapper .owl-dots .owl-dot.active span {
+    background: #21C2F8;
+}
+
 .course-landing {
     width: 100%;
     color: #2C3E50;
+    margin-bottom: 5rem;
 }
 
 .course-landing__info {
@@ -11399,6 +11422,15 @@ footer > * {
     gap: 3rem 2rem;
 }
 
+.course-landing__info__tags a {
+    text-decoration: none;
+    color: #2C3E50;
+}
+
+.course-landing__info__tags a:hover {
+    text-decoration: underline;
+}
+
 .course-landing__description {
     width: 100%;
     padding: calc(3rem - 3px);
@@ -11415,5 +11447,15 @@ footer > * {
     width: 100%;
     padding: calc(3rem - 3px);
     border: 3px solid #21C2F8;
+}
+
+.course-landing__lessons ol li {
+    margin-left: 3rem;
+    font-weight: normal;
+    margin-bottom: 0.7rem;
+}
+
+.course-landing__lessons > ol:first-child > li {
+    margin-left: 0;
     font-weight: 700;
 }
