@@ -23,7 +23,7 @@ const spawn = require('child_process').spawn;
 
 /* Paths */
 const srcPath = 'assets/';
-const distPath = 'edushare/edushare/static/bundles/';
+const distPath = 'edushare/static/bundles/';
 const htmlPath = 'edushare/**/templates/**/'
 
 const path = {

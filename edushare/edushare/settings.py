@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-cs+66v%rlyrkv*t7-($s%txq_xl^6$y)4##4v#b33%ft@$$_a1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # vendoe apps
+    # vendor apps
     'colorfield',
     'optimized_image',
     # my apps
@@ -128,19 +128,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
-# MEDIA_ROOT = BASE_DIR / 'media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # STATIC_ROOT = BASE_DIR / 'static'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 STATICFILES_DIRS = (
     BASE_DIR / 'static/',
-    BASE_DIR / 'edushare/static/',
 )
 
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-)
+# STATICFILES_FINDERS = (
+#     'django.contrib.staticfiles.finders.FileSystemFinder',
+#     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+# )
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -150,4 +148,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # OPTIMIZED_IMAGE_METHOD = 'pillow'
 OPTIMIZED_IMAGE_METHOD = 'tinypng'
 TINYPNG_KEY = 'H9xdMq3wjtzfZC4HhgnK5wtrY4x8zMvz'
-
