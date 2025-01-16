@@ -8,6 +8,8 @@ from colorfield.fields import ColorField
 from django.shortcuts import reverse
 from django.db.models.functions import Length
 from mptt.models import MPTTModel, TreeForeignKey
+from markdownx.models import MarkdownxField
+from markdownx.utils import markdownify
 
 
 def slug_generator(sender, instance, *args, **kwargs):
@@ -57,10 +59,13 @@ pre_save.connect(slug_generator, sender=Course)
 
 class LessonList(MPTTModel):
     title = models.CharField(max_length=100, verbose_name='Название')
+    slug = models.SlugField(max_length=250, unique=True, blank=True, null=True)
     parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True,
                             related_name='children', verbose_name='Родитель')
-    related_course = models.ForeignKey(Course, on_delete=models.SET_NULL, null=True, verbose_name='Связанный курс')
+    related_course = models.ForeignKey(Course, on_delete=models.SET_NULL, null=True,
+                                       verbose_name='Связанный курс')
     order_by = models.IntegerField(verbose_name='Приоритет', default=1)
+    lesson_page = MarkdownxField(null=True, blank=True)
 
     def __str__(self):
         return self.title
@@ -68,6 +73,16 @@ class LessonList(MPTTModel):
     class MPTTMeta:
         order_insertion_by = ['related_course', 'order_by', 'title']
 
+    @property
+    def formatted_markdown(self):
+        return markdownify(self.lesson_page)
+
     class Meta:
         verbose_name = 'Список уроков'
         verbose_name_plural = 'Список уроков'
+
+    def get_absolute_url(self):
+        return reverse('lesson', kwargs={'id': self.related_course.pk, 'slug': self.slug})
+
+
+pre_save.connect(slug_generator, sender=LessonList)

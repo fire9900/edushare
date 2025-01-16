@@ -1,0 +1,8 @@
+{%  extends 'eduapp/base.html' %}
+
+{% block content %}
+    <div class="lesson-page">
+        {{ lesson.formatted_markdown|safe }}
+    </div>
+
+{% endblock %}

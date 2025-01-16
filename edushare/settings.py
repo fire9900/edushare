@@ -26,8 +26,8 @@ SECRET_KEY = 'django-insecure-cs+66v%rlyrkv*t7-($s%txq_xl^6$y)4##4v#b33%ft@$$_a1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
-
+# ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+CSRF_TRUSTED_ORIGINS = ['http://*.127.0.0.1:3000']
 
 # Application definition
 
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # vendor apps
     'colorfield',
     'optimized_image',
+    'markdownx',
     # my apps
     'eduapp',
     'courses',
@@ -131,6 +132,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 STATICFILES_DIRS = (
@@ -150,3 +152,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # OPTIMIZED_IMAGE_METHOD = 'pillow'
 OPTIMIZED_IMAGE_METHOD = 'tinypng'
 TINYPNG_KEY = 'H9xdMq3wjtzfZC4HhgnK5wtrY4x8zMvz'
+
+# MARKDOWNX SETTINGS
+MARKDOWNX_MARKDOWN_EXTENSIONS = [
+    'markdown.extensions.extra',
+    'markdown.extensions.sane_lists'
+]

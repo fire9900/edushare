@@ -1,0 +1,117 @@
+.markdownx {
+	width: 100%;
+    display: flex !important;
+    gap: 2rem;
+    justify-content: space-around;
+}
+
+.markdownx-preview {
+	border-left: 1px solid #ccc;
+    padding-left: 1rem;
+}
+
+/* lesson-page styles NOT AUTO UPDATE */
+
+.lesson-page {
+  width: 100%;
+  color: #2C3E50;
+  font-size: 2.5rem;
+}
+.lesson-page h1, .lesson-page h2, .lesson-page h3, .lesson-page h4, .lesson-page h5, .lesson-page h6 {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-weight: bold;
+}
+.lesson-page h1 {
+  font-size: 4.5rem;
+}
+.lesson-page h2 {
+  font-size: 4rem;
+}
+.lesson-page h3 {
+  font-size: 3.5rem;
+}
+.lesson-page h4 {
+  font-size: 3rem;
+}
+.lesson-page h5 {
+  font-size: 2.5rem;
+}
+.lesson-page h6 {
+  font-size: 2rem;
+}
+.lesson-page p {
+  margin-bottom: 1.5rem;
+}
+.lesson-page strong {
+  font-weight: bold;
+}
+.lesson-page em {
+  font-style: italic;
+}
+.lesson-page blockquote {
+  font-size: 1.375rem;
+  color: #698bac;
+  margin: 0;
+  padding-left: 1.5em;
+  border-left: 0.5em #eee solid;
+}
+.lesson-page ol, .lesson-page ul {
+  margin: 1em 0 !important;
+  padding: 0 0 0 2em !important;
+}
+.lesson-page ol li, .lesson-page ul li {
+  margin-bottom: 0.5em;
+}
+.lesson-page ol {
+  list-style: decimal;
+}
+.lesson-page ul {
+  list-style: disc;
+}
+.lesson-page pre {
+  font-family: monospace, monospace;
+  font-size: 1.75rem;
+  margin: 1.5em 0 1.5em 0;
+  padding: 1em;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  border: 1px solid #ddd;
+  background-color: #f8f8f8;
+  border-radius: 2px;
+}
+.lesson-page pre code {
+  margin: 0;
+  padding: 0;
+  background: 0 0;
+  border: none;
+}
+.lesson-page hr {
+  display: block;
+  height: 0;
+  border: 0;
+  font-style: italic;
+  border-bottom: 1px solid #698bac;
+  margin: 20px 0;
+  padding: 0;
+}
+.lesson-page a {
+  color: #507192;
+  text-decoration: underline;
+}
+.lesson-page a:focus {
+  outline: thin dotted;
+  color: #2C3E50;
+}
+.lesson-page a:active {
+  outline: 0;
+  color: #2C3E50;
+}
+.lesson-page img {
+  max-width: 100%;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+  margin: 3rem 0;
+}

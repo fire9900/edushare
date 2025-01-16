@@ -1,0 +1,23 @@
+.markdownx {
+	width: 100%;
+    display: flex !important;
+    gap: 2rem;
+    justify-content: space-around;
+}
+
+.markdownx-preview {
+	border-left: 1px solid #ccc;
+    padding-left: 1rem;
+}
+
+#lesson-preview ol {
+    list-style: decimal;
+}
+
+#lesson-preview ul {
+    list-style: disc;
+}
+
+#lesson-preview li {
+    list-style: inherit;
+}

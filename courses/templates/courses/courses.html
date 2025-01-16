@@ -17,7 +17,7 @@
 						{% endfor %}
 					</div>
 					<p class="course__info__title">{{ course.title }}</p>
-					<p class="course__info__description">{{ course.description }}</p>
+					<p class="course__info__description">{{ course.description|linebreaksbr|truncatechars:300 }}</p>
 				</div>
 				{% if course.teacher_photo_visible %}
 					<div class="carousel-wrapper">
@@ -31,8 +31,6 @@
 			</a>
 		{% endfor %}
 	{% else %}
-		<div class="noresponse">
-			
-		</div>
+		<p>Здесь пусто...</p>
 	{% endif %}
 {% endblock %}
