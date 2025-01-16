@@ -14,3 +14,9 @@ def course_landing(request, id):
                   {'title': current_course.title,
                    'course': current_course,
                    'lesson_list': LessonList.objects.filter(related_course__pk=id)})
+
+
+def lesson_page(request, id, slug):
+    current_lesson = LessonList.objects.filter(related_course__pk=id).filter(slug=slug).first()
+    return render(request, 'courses/lesson_page.html', {
+        'lesson': current_lesson})

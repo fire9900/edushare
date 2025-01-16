@@ -25,6 +25,7 @@ urlpatterns = [
     path('', include('eduapp.urls')),
     path('', include('courses.urls')),
     # path('', index, name='home'),
+    path('markdownx/', include('markdownx.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

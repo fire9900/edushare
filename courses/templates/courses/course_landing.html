@@ -9,13 +9,13 @@
 		</div>
 		<div class="course-landing__description">
 			<div class="course-landing__description__title">Описание</div>
-			<div class="course-landing__description__text">{{ course.description }}</div>
+			<div class="course-landing__description__text">{{ course.description|linebreaks }}</div>
 		</div>
 		<div class="course-landing__lessons">
 			<ol>
 				{% recursetree lesson_list %}
 					<li>
-						{{ node.title }}
+                        <a href="{{ node.get_absolute_url }}">{{ node.title }}</a>
 			            {% if not node.is_leaf_node %}
 			                <ol class="children">
 			                    {{ children }}
